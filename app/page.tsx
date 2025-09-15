@@ -8,6 +8,7 @@ const formatDate = (dateString: string) => {
 }
 
 export default function Home() {
+  console.log(allBlogs)
   // 按发布日期排序
   const sortedBlogs = allBlogs.sort((a: Blog, b: Blog) => {
     if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
@@ -20,10 +21,10 @@ export default function Home() {
     <>
       {/* 最新文章区域 */}
       <section id="articles" className="py-12">
-        <div className="flex items-center justify-between mb-8">
+        {/* <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold">最新文章</h2>
           <div className="h-px bg-border flex-grow ml-6"></div>
-        </div>
+        </div> */}
 
         {sortedBlogs.length > 0 ? (
           <div className="space-y-8">

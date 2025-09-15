@@ -24,6 +24,12 @@ export const Blog = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    tags: {
+      type: 'list',
+      of: {
+        type: 'string',
+      }
+    }
   },
   // 定义额外出参
   computedFields: {
@@ -42,6 +48,8 @@ export default makeSource({
   // 文件路径
   contentDirPath: 'posts',
   documentTypes: [Blog],
+  // 忽略以_开头的文件
+  contentDirExclude: ['**/_*.*'],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
