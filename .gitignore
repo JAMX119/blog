@@ -42,3 +42,8 @@ next-env.d.ts
 
 # contentlayer
 .contentlayer
+
+# ignore copy files
+*copy*
+
+
