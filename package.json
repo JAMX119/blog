@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "next start",
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "build:content": "contentlayer2 build",
-    "start": "next start",
+    "deploy": "contentlayer2 build && next build --turbopack",
     "lint": "eslint"
   },
   "dependencies": {
