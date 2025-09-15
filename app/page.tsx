@@ -16,7 +16,7 @@ export default function Home() {
         .map((item: Blog) => (
           <Link
             key={item.slug}
-            href={`/${item.slug}`}
+            href={`/blog/${item.slug}`}
             className='mb-5'
           >
             {item.title}
