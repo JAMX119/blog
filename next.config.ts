@@ -7,7 +7,7 @@ const nextConfig = {
   output: "export", // 关键：导出静态 HTML
   images: { unoptimized: true }, // 禁用 next/image 优化，否则会报错
   basePath: isProd ? "/blog" : "", // 如果仓库名是 blog
-  assetPrefix: isProd ? "/blog/" : "",
+  assetPrefix: isProd ? "/" : "",
 };
 
 module.exports = withContentlayer(nextConfig)
