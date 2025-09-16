@@ -45,5 +45,7 @@ next-env.d.ts
 
 # ignore copy files
 *copy*
+# ignore posts
+posts/_**
 
 

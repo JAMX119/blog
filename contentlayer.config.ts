@@ -48,8 +48,8 @@ export default makeSource({
   // 文件路径
   contentDirPath: 'posts',
   documentTypes: [Blog],
-  // 忽略以_开头的文件
-  contentDirExclude: ['**/_*.*'],
+  // 忽略以_开头的文档
+  contentDirExclude: ['**/_*.mdx', '_**/*.mdx'],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
