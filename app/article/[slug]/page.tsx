@@ -21,7 +21,10 @@ type BlogSlugProps = {
   }
 }
 
-export default function BlogSlug({ params }: BlogSlugProps) {
+// 在App Router中，params已经是解析好的对象，不需要await
+// 保持组件为普通函数以正确使用Hooks
+
+function BlogSlug({ params }: BlogSlugProps) {
   const post = allBlogs.find((post) => post.slug === params.slug)
   if (!post) {
     notFound()
@@ -156,4 +159,9 @@ export default function BlogSlug({ params }: BlogSlugProps) {
       </div>
     </>
   )
+}
+
+export default async function HOC({ params }: BlogSlugProps) {
+  const awaitParams = await params
+  return <BlogSlug params={awaitParams} />
 }

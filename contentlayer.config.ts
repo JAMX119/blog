@@ -35,7 +35,12 @@ export const Blog = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (doc) => doc._raw.flattenedPath,
+      resolve: (doc) => {
+        // 生成基于路径的唯一slug，但移除mdx扩展名
+        // 对于嵌套在子目录的文件，会生成类似'vue3-performance'的slug
+        const pathParts = doc._raw.flattenedPath.split('/');
+        return pathParts.join('-').replace(/\.mdx$/, '')
+      },
     },
     readingTime: {
       type: 'nested',

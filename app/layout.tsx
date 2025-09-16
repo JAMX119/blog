@@ -28,7 +28,7 @@ export default function RootLayout({
         <Header />
 
         {/* 主要内容 */}
-        <main className="flex-1 container mx-auto px-4 py-8 max-w-4xl">
+        <main className="flex-1 container mx-auto px-4 py-8 max-w-6xl">
           {children}
         </main>
 
