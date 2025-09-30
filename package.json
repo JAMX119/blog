@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "next start",
-    "dev": "next dev --turbopack",
+    "dev": "contentlayer2 build && npm run dev:watch",
+    "dev:watch": "concurrently \"next dev --turbopack\" \"chokidar 'posts/**/*' -c 'contentlayer2 build'\"",
     "build": "next build --turbopack",
     "build:content": "contentlayer2 build",
     "deploy": "contentlayer2 build && next build --turbopack",
@@ -23,6 +24,8 @@
     "@types/node": "^20.19.14",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
     "contentlayer2": "^0.5.8",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
