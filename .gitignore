@@ -46,6 +46,8 @@ next-env.d.ts
 # ignore copy files
 *copy*
 # ignore posts
-posts/_**
+_**
+# project
+project
 
-
+Untitled-*.ini
