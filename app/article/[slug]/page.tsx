@@ -10,6 +10,7 @@ const formatDate = (dateString: string) => {
 }
 
 export async function generateStaticParams() {
+  console.log('allBlogs', allBlogs)
   return allBlogs.map((post) => ({
     slug: post.slug,
   }))
@@ -145,7 +146,7 @@ function BlogSlug({ params }: BlogSlugProps) {
         {nextPost && (
           <Link 
             href={`/article/${nextPost.slug}`} 
-            className={`flex-1 p-4 border border-border rounded-lg hover:border-primary/30 hover:bg-primary/5 transition-all flex items-start gap-3 ${!prevPost ? 'sm:ml-auto' : ''}`}
+            className={` flex-1 p-4 border border-border rounded-lg hover:border-primary/30 hover:bg-primary/5 transition-all flex justify-end items-start gap-3 ${!prevPost ? 'sm:ml-auto' : ''}`}
           >
             <div className="text-right">
               <p className="text-sm text-muted">下一篇</p>

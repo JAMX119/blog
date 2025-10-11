@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import "./globals.css"; // 引入全局样式表
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,6 +21,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="cn">
       <body className="min-h-screen flex flex-col">
